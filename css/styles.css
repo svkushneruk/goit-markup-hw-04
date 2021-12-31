@@ -133,6 +133,7 @@ a {
 }
 
 .header-nav-link {
+  display: block;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -153,8 +154,18 @@ a {
   margin-right: 50px;
 }
 
-.header-contacts-item {
+.header-contacts-item .header-nav-link {
   display: flex;
+  align-items: center;
+}
+
+.header-contacts-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.header-nav-link:hover .header-contacts-icon {
+  color: var(--accent-color);
 }
 
 /* ----------------------HERO------------------------- */
