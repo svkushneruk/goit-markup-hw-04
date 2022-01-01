@@ -17,6 +17,7 @@
   --portfolio-card-border: #eeeeee;
   --card-items: 3;
   --header-border-color: #ececec;
+  --hero-bg-color: #2f303a;
 }
 
 html {
@@ -171,7 +172,12 @@ a {
 /* ----------------------HERO------------------------- */
 
 .hero {
-  background-color: #2f303a;
+  background-color: var(--hero-bg-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
@@ -232,6 +238,17 @@ a {
   --card-items: 4;
 }
 
+.card-set-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
 .about-title {
   margin-bottom: 10px;
   font-size: 14px;
@@ -283,6 +300,10 @@ a {
   padding-bottom: 30px;
 }
 
+.team-text {
+  margin-bottom: 16px;
+}
+
 .team-text,
 .team-persone-title {
   font-size: 16px;
@@ -294,6 +315,22 @@ a {
   font-weight: 500;
   color: var(--main-title-color);
   margin-bottom: 10px;
+}
+
+.social-list {
+  justify-content: center;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: tomato;
 }
 
 /* ----------------------FOOTER------------------------- */
