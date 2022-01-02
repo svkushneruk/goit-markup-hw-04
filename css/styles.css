@@ -18,6 +18,8 @@
   --card-items: 3;
   --header-border-color: #ececec;
   --hero-bg-color: #2f303a;
+  --social-icon-color: #afb1b8;
+  --footer-icon-bg: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -318,9 +320,10 @@ a {
 }
 
 .social-list {
-  justify-content: center;
-  padding-right: 30px;
-  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 32px;
+  padding-left: 32px;
 }
 
 .social-link {
@@ -330,7 +333,20 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: tomato;
+  /* background: tomato; */
+}
+
+.social-link:hover {
+  background: var(--accent-color);
+  color: var(--light-color);
+}
+
+.social-link .social-icon {
+  fill: var(--social-icon-color);
+}
+
+.social-link:hover .social-icon {
+  fill: currentColor;
 }
 
 /* ----------------------FOOTER------------------------- */
@@ -339,6 +355,15 @@ a {
   background-color: var(--footer-bg-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-contacts {
+  margin-right: 70px;
 }
 
 .footer .logo {
@@ -361,6 +386,31 @@ a {
 .address-link:hover,
 .address-link:focus {
   color: var(--light-color);
+}
+
+.invite-title {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--light-color);
+}
+
+.footer .social-list {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer .social-link {
+  background: var(--footer-icon-bg);
+  margin-right: 10px;
+}
+
+.footer .social-link:hover {
+  background: var(--accent-color);
 }
 
 /* ----------------------PORTFOLIO------------------------- */
