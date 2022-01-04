@@ -21,9 +21,9 @@
   --hero-bg-color: #2f303a;
   --social-icon-color: #afb1b8;
   --footer-icon-bg: rgba(255, 255, 255, 0.1);
-  --clients-border-color: #AFB1B8;
-  --portfolio-card-shadow-color: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-
+  --clients-border-color: #afb1b8;
+  --portfolio-card-shadow-color: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 html {
@@ -179,13 +179,12 @@ a {
 
 .hero {
   background-color: var(--hero-bg-color);
-  height: 600px;
   padding-top: 200px;
   padding-bottom: 200px;
   background-image: linear-gradient(to right, var(--hero-gradient-color)),
     url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover, auto;
   background-position: center;
   text-align: center;
 }
@@ -245,7 +244,7 @@ a {
   --card-items: 4;
 }
 
-.card-set-box {
+.about-icon-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,6 +305,8 @@ a {
 .team-content {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-right: 32px;
+  padding-left: 32px;
 }
 
 .team-text {
@@ -325,11 +326,6 @@ a {
   margin-bottom: 10px;
 }
 
-.social-list {
-  padding-right: 32px;
-  padding-left: 32px;
-}
-
 .social-list.card-set {
   --card-set-gap: 10px;
 }
@@ -343,7 +339,8 @@ a {
   border-radius: 50%;
 }
 
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background: var(--accent-color);
   color: var(--light-color);
 }
@@ -352,7 +349,8 @@ a {
   fill: var(--social-icon-color);
 }
 
-.social-link:hover .social-icon {
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
   fill: currentColor;
 }
 
@@ -372,7 +370,8 @@ a {
   color: var(--clients-border-color);
 }
 
-.clients-link:hover {
+.clients-link:hover,
+.clients-link:focus {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
 }
@@ -381,7 +380,8 @@ a {
   fill: currentColor;
 }
 
-.clients-link:hover .clients-icon {
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
   fill: currentColor;
 }
 
@@ -435,11 +435,6 @@ a {
   color: var(--light-color);
 }
 
-.footer .social-list {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .footer .social-link {
   background: var(--footer-icon-bg);
   color: var(--light-color);
@@ -449,7 +444,8 @@ a {
   fill: currentColor;
 }
 
-.footer .social-link:hover {
+.footer .social-link:hover,
+.footer .social-link:focus {
   background: var(--accent-color);
 }
 
@@ -487,12 +483,14 @@ a {
   box-shadow: var(--filters-shadow);
 }
 
-.portfolio-item {
+.portfolio-link {
+  display: flex;
+  flex-direction: column;
   border-bottom: 1px solid var(--portfolio-card-border);
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: var(--portfolio-card-shadow-color);
 }
 
