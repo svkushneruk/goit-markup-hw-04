@@ -5,13 +5,14 @@
   --main-title-color: #212121;
   --header-logo-color: #000000;
   --hover-btn-color: #188ce8;
-  --btn-shadow: rgba(0, 0, 0, 0.15);
+  --btn-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  --hero-gradient-color: rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4);
   --address-link-color: rgba(255, 255, 255, 0.6);
   --footer-bg-color: #2f303a;
-  --filters-shadow: rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+  --filters-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   --light-bg-color: #f5f4fa;
-  --team-card-shadow: rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --card-set-gap: 30px;
   --portfolio-card-border: #eeeeee;
@@ -21,6 +22,8 @@
   --social-icon-color: #afb1b8;
   --footer-icon-bg: rgba(255, 255, 255, 0.1);
   --clients-border-color: #AFB1B8;
+  --portfolio-card-shadow-color: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
 }
 
 html {
@@ -176,13 +179,14 @@ a {
 
 .hero {
   background-color: var(--hero-bg-color);
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/hero-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  height: 600px;
   padding-top: 200px;
   padding-bottom: 200px;
+  background-image: linear-gradient(to right, var(--hero-gradient-color)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   text-align: center;
 }
 
@@ -214,7 +218,7 @@ a {
 .hero-btn:hover,
 .hero-btn:focus {
   background: var(--hover-btn-color);
-  box-shadow: 0px 4px 4px var(--btn-shadow);
+  box-shadow: var(--btn-shadow);
 }
 
 .section {
@@ -247,7 +251,7 @@ a {
   align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
-  background: #f5f4fa;
+  background: var(--light-bg-color);
   border-radius: 4px;
   margin-bottom: 30px;
 }
@@ -284,14 +288,15 @@ a {
   background-color: var(--light-bg-color);
 }
 
-.team .card-set-item {
+.team .card-set-item,
+.footer .card-set-item {
   --card-items: 4;
 }
 
 .team-item {
   background-color: var(--light-color);
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 3px var(--team-card-shadow);
+  box-shadow: var(--team-card-shadow);
 }
 
 .team-img {
@@ -479,11 +484,16 @@ a {
 .filters-btn:focus {
   background: var(--accent-color);
   color: var(--light-color);
-  box-shadow: 0px 3px 1px var(--filters-shadow);
+  box-shadow: var(--filters-shadow);
 }
 
 .portfolio-item {
   border-bottom: 1px solid var(--portfolio-card-border);
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: var(--portfolio-card-shadow-color);
 }
 
 .portfolio-img {
