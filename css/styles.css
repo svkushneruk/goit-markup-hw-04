@@ -20,6 +20,7 @@
   --hero-bg-color: #2f303a;
   --social-icon-color: #afb1b8;
   --footer-icon-bg: rgba(255, 255, 255, 0.1);
+  --clients-border-color: #AFB1B8;
 }
 
 html {
@@ -320,10 +321,12 @@ a {
 }
 
 .social-list {
-  display: flex;
-  justify-content: space-between;
   padding-right: 32px;
   padding-left: 32px;
+}
+
+.social-list.card-set {
+  --card-set-gap: 10px;
 }
 
 .social-link {
@@ -333,7 +336,6 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  /* background: tomato; */
 }
 
 .social-link:hover {
@@ -341,11 +343,40 @@ a {
   color: var(--light-color);
 }
 
-.social-link .social-icon {
+.social-icon {
   fill: var(--social-icon-color);
 }
 
 .social-link:hover .social-icon {
+  fill: currentColor;
+}
+
+/* ----------------------CLIENTS------------------------- */
+
+.clients .card-set {
+  --card-items: 6;
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92px;
+  border: 1px solid var(--clients-border-color);
+  border-radius: 4px;
+  color: var(--clients-border-color);
+}
+
+.clients-link:hover {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-link:hover .clients-icon {
   fill: currentColor;
 }
 
@@ -406,7 +437,11 @@ a {
 
 .footer .social-link {
   background: var(--footer-icon-bg);
-  margin-right: 10px;
+  color: var(--light-color);
+}
+
+.footer .social-icon {
+  fill: currentColor;
 }
 
 .footer .social-link:hover {
