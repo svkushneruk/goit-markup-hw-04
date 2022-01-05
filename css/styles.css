@@ -486,7 +486,6 @@ a {
 .portfolio-link {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--portfolio-card-border);
 }
 
 .portfolio-link:hover,
@@ -500,6 +499,8 @@ a {
 
 .portfolio-content {
   padding: 20px 24px;
+  border: 1px solid var(--portfolio-card-border);
+  border-top: none;
 }
 
 .portfolio-title {
